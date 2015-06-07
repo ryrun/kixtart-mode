@@ -1,6 +1,6 @@
 ;;; kixtart-mode.el --- major mode for Kixtart scripting files
 
-;; Version: 20150607
+;; Version: 20150607.1
 ;; Homepage: https://github.com/ryrun/kixtart-mode
 ;; Package-Requires: ((emacs "24"))
 
