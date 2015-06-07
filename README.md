@@ -1,2 +1,6 @@
 # kixtart-mode
-kixtart-mode for emacs
+
+Add support for KiXtart scripting files. Basic syntax highlighting.
+More information about KiXtart: http://www.kixtart.org/
+
+My first emacs package.
