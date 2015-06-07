@@ -76,4 +76,4 @@
 (progn
   (add-to-list 'auto-mode-alist '("\\.kix\\'" . kixtart-mode)))
 
-;;; kixtart-mode.el
+;;; kixtart-mode.el ends here
