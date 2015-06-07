@@ -1,4 +1,11 @@
 ;;; kixtart-mode.el --- major mode for Kixtart scripting files
+
+;; Version: 20150607
+;; Homepage: https://github.com/ryrun/kixtart-mode
+;; Package-Requires: ((emacs "24"))
+
+;;; Code:
+
 (provide 'kixtart-mode)
 
 ;syntax table
@@ -68,3 +75,5 @@
 
 (progn
   (add-to-list 'auto-mode-alist '("\\.kix\\'" . kixtart-mode)))
+
+;;; kixtart-mode.el
