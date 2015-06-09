@@ -2,7 +2,6 @@
 
 ;; Author:  Ryrun <https://github.com/ryrun>
 ;; Keywords: languages
-;; Version: 20150609.3
 ;; Homepage: https://github.com/ryrun/kixtart-mode
 ;; Package-Requires: ((emacs "24"))
 
@@ -82,8 +81,8 @@
   (setq font-lock-defaults '(kixtart-font-lock-defaults))
   )
 
-(progn
-  (add-to-list 'auto-mode-alist '("\\.kix\\'" . kixtart-mode)))
+;;;###autoload
+(add-to-list 'auto-mode-alist '("\\.kix\\'" . kixtart-mode))
 
 (provide 'kixtart-mode)
 ;;; kixtart-mode.el ends here
