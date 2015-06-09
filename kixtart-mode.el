@@ -21,7 +21,8 @@
 
 ;;; Commentary:
 
-;; 
+;; Add support for KiXtart scripting files. Provides basic syntax highlighting.
+;; More information about KiXtart: http://www.kixtart.org/
 
 ;;; Code:
 
@@ -74,7 +75,6 @@
   )
 
 ;;;###autoload
-
 (define-derived-mode kixtart-mode fundamental-mode "Kixtart Mode"
   :syntax-table kixtart-mode-syntax-table
   (setq-default font-lock-keywords-case-fold-search t)
@@ -84,4 +84,5 @@
 (progn
   (add-to-list 'auto-mode-alist '("\\.kix\\'" . kixtart-mode)))
 
+(provide 'kixtart-mode)
 ;;; kixtart-mode.el ends here
