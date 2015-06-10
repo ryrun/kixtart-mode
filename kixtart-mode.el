@@ -47,12 +47,11 @@
     (modify-syntax-entry ?\\ "." table)
     table))
 
-(eval-when-compile
-  (defun kixtart-gen-regexp-list(list &optional appendstr)
+(defun kixtart-gen-regexp-list(list &optional appendstr)
     "function to create regex for functions and keywords."
     (concat "\\(?:^\\|\\s-\\)\\("
             (regexp-opt list)
-            "\\)\\>")))
+            "\\)\\>"))
 
 (eval-and-compile
   (defvar kixtart-var "$[0-9a-zA-Z]+")
