@@ -2,7 +2,7 @@
 
 ;; Author:  Ryrun <https://github.com/ryrun>
 ;; Keywords: languages
-;; Version: 20150609.5
+;; Version: 20150610.1
 ;; Homepage: https://github.com/ryrun/kixtart-mode
 ;; Package-Requires: ((emacs "24"))
 
