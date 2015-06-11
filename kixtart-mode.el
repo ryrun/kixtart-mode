@@ -2,7 +2,7 @@
 
 ;; Author:  Ryrun <https://github.com/ryrun>
 ;; Keywords: languages
-;; Version: 20150610.1
+;; Version: 20150611.1
 ;; Homepage: https://github.com/ryrun/kixtart-mode
 ;; Package-Requires: ((emacs "24"))
 
@@ -53,16 +53,14 @@
             (regexp-opt list)
             "\\)\\>"))
 
-(eval-and-compile
-  (defvar kixtart-var "$[0-9a-zA-Z]+")
-  (defvar kixtart-type 
-        (kixtart-gen-regexp-list (list "@Address" "@Build" "@CPU" "@CRLF" "@CSD" "@Color" "@Comment" "@CurDir" "@DOS" "@Date" "@Day" "@Domain" "@Error" "@FullName" "@HomeDir" "@HomeDrive" "@HomeShr" "@HostName" "@IPAddressX" "@InWin" "@KiX" "@LDomain" "@LDrive" "@LM" "@LServer" "@LanRoot" "@LogonMode" "@LongHomeDir" "@MDayNo" "@MHz" "@MSecs" "@MaxPWAge" "@Month" "@MonthNo" "@PID" "@PWAge" "@PrimaryGroup" "@Priv" "@ProductSuite" "@ProductType" "@RAS" "@RServer" "@Result" "@SError" "@SID" "@ScriptDir" "@ScriptExe" "@ScriptName" "@Site" "@StartDir" "@SysLang" "@TIME" "@Ticks" "@USERID" "@USERLANG" "@WDayNo" "@WKSTA" "@WUserID" "@YDayNo" "@Year")))
-  (defvar kixtart-builtin
-        (kixtart-gen-regexp-list (list "AScan" "Abs" "AddKey" "AddPrinterConnection" "AddProgramGroup" "AddProgramItem" "Asc" "At" "BackupEventLog" "Beep" "Big" "Box" "Break" "CD" "CDbl" "CInt" "CLS" "CStr" "Call" "Chr" "ClearEventLog" "Close" "Color" "CompareFileTimes" "Cookie1" "Copy" "CreateObject" "DecToHex" "Del" "DelKey" "DelPrinterConnection" "DelProgramGroup" "DelProgramItem" "DelTree" "DelValue" "Dim" "Dir" "Display" "EnumGroup" "EnumIpInfo" "EnumKey" "EnumLocalGroup" "EnumValue" "Execute" "Exist" "Exit" "ExpandEnvironmentVars" "Fix" "FlushKb" "FormatNumber" "FreeFileHandle" "Get" "GetDiskSpace" "GetFileAttr" "GetFileSize" "GetFileTime" "GetFileVersion" "GetObject" "GetS" "Global" "Go" "Gosub" "Goto" "IIF" "InGroup" "InStr" "InStrRev" "Int" "IsDeclared" "Join" "KbHit" "KeyExist" "LCase" "LTrim" "Left" "Len" "LoadHive" "LoadKey" "LogEvent" "Logoff" "MD" "Macro" "MemorySize" "MessageBox" "Move" "Open" "Play" "Quit" "RD" "RTrim" "ReDim" "ReadLine" "ReadProfileString" "ReadType" "ReadValue" "RedirectOutput" "Return" "Right" "Rnd" "Round" "Run" "SRnd" "SaveKey" "Select" "Case" "EndSelect" "SendKeys" "SendMessage" "Set" "SetAscii" "SetConsole" "SetDefaultPrinter" "SetFileAttr" "SetFocus" "SetL" "SetM" "SetOption" "SetSystemState" "SetTime" "SetTitle" "SetWallpaper" "Shell" "ShowProgramGroup" "ShutDown" "SidToName" "Sleep" "Small" "Split" "Substr" "Trim" "UCase" "Ubound" "Use" "UnloadHive" "Val" "VarType" "VarTypeName" "WriteLine" "WriteProfileString" "WriteValue"))
-        )
-  (defvar kixtart-keywords
-        (kixtart-gen-regexp-list (list "Do" "Until" "Function" "EndFunction" "While" "Loop" "Debug" "On" "Off" "For" "Each" "Next" "If" "Else" "Endif" "Or" "And")))
-  )
+(defvar kixtart-var "$[0-9a-zA-Z]+")
+(defvar kixtart-type 
+      (kixtart-gen-regexp-list (list "@Address" "@Build" "@CPU" "@CRLF" "@CSD" "@Color" "@Comment" "@CurDir" "@DOS" "@Date" "@Day" "@Domain" "@Error" "@FullName" "@HomeDir" "@HomeDrive" "@HomeShr" "@HostName" "@IPAddressX" "@InWin" "@KiX" "@LDomain" "@LDrive" "@LM" "@LServer" "@LanRoot" "@LogonMode" "@LongHomeDir" "@MDayNo" "@MHz" "@MSecs" "@MaxPWAge" "@Month" "@MonthNo" "@PID" "@PWAge" "@PrimaryGroup" "@Priv" "@ProductSuite" "@ProductType" "@RAS" "@RServer" "@Result" "@SError" "@SID" "@ScriptDir" "@ScriptExe" "@ScriptName" "@Site" "@StartDir" "@SysLang" "@TIME" "@Ticks" "@USERID" "@USERLANG" "@WDayNo" "@WKSTA" "@WUserID" "@YDayNo" "@Year")))
+(defvar kixtart-builtin
+      (kixtart-gen-regexp-list (list "AScan" "Abs" "AddKey" "AddPrinterConnection" "AddProgramGroup" "AddProgramItem" "Asc" "At" "BackupEventLog" "Beep" "Big" "Box" "Break" "CD" "CDbl" "CInt" "CLS" "CStr" "Call" "Chr" "ClearEventLog" "Close" "Color" "CompareFileTimes" "Cookie1" "Copy" "CreateObject" "DecToHex" "Del" "DelKey" "DelPrinterConnection" "DelProgramGroup" "DelProgramItem" "DelTree" "DelValue" "Dim" "Dir" "Display" "EnumGroup" "EnumIpInfo" "EnumKey" "EnumLocalGroup" "EnumValue" "Execute" "Exist" "Exit" "ExpandEnvironmentVars" "Fix" "FlushKb" "FormatNumber" "FreeFileHandle" "Get" "GetDiskSpace" "GetFileAttr" "GetFileSize" "GetFileTime" "GetFileVersion" "GetObject" "GetS" "Global" "Go" "Gosub" "Goto" "IIF" "InGroup" "InStr" "InStrRev" "Int" "IsDeclared" "Join" "KbHit" "KeyExist" "LCase" "LTrim" "Left" "Len" "LoadHive" "LoadKey" "LogEvent" "Logoff" "MD" "Macro" "MemorySize" "MessageBox" "Move" "Open" "Play" "Quit" "RD" "RTrim" "ReDim" "ReadLine" "ReadProfileString" "ReadType" "ReadValue" "RedirectOutput" "Return" "Right" "Rnd" "Round" "Run" "SRnd" "SaveKey" "Select" "Case" "EndSelect" "SendKeys" "SendMessage" "Set" "SetAscii" "SetConsole" "SetDefaultPrinter" "SetFileAttr" "SetFocus" "SetL" "SetM" "SetOption" "SetSystemState" "SetTime" "SetTitle" "SetWallpaper" "Shell" "ShowProgramGroup" "ShutDown" "SidToName" "Sleep" "Small" "Split" "Substr" "Trim" "UCase" "Ubound" "Use" "UnloadHive" "Val" "VarType" "VarTypeName" "WriteLine" "WriteProfileString" "WriteValue"))
+      )
+(defvar kixtart-keywords
+      (kixtart-gen-regexp-list (list "Do" "Until" "Function" "EndFunction" "While" "Loop" "Debug" "On" "Off" "For" "Each" "Next" "If" "Else" "Endif" "Or" "And")))
 
 (defconst kixtart-font-lock-defaults
   `(
